@@ -76,6 +76,7 @@ class SportsWalking(Training):
 class Swimming(Training):
     """Тренировка: плавание."""
 
+    LEN_STEP: float = 1.38
     CALORIES_MEAN_SPEED_SHIFT: float = 1.1
     CALORIES_WEIGHT_MULTIPLIER: int = 2
     
@@ -104,7 +105,12 @@ class Swimming(Training):
 
 def read_package(workout_type: str, data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
-    pass
+    training = {
+        'SWM' : Swimming,
+        'RUN' : Running,
+        'WLK' : SportsWalking
+    }
+    return training[workout_type](data)
 
 
 def main(training: Training) -> None:
