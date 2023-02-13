@@ -1,5 +1,6 @@
 class InfoMessage:
     """Информационное сообщение о тренировке."""
+
     def __init__(self,
                  training_type: str,
                  duration: float,
@@ -22,6 +23,7 @@ class InfoMessage:
 
 class Training:
     """Базовый класс тренировки."""
+
     TRANING_TYPE = 'Base traning'
     LEN_STEP: float = 0.65
     M_IN_KM: int = 1000
@@ -57,6 +59,7 @@ class Training:
 
 class Running(Training):
     """Тренировка: бег."""
+
     TRANING_TYPE = 'Running'
     CALORIES_MEAN_SPEED_MULTIPLIER: int = 18
     CALORIES_MEAN_SPEED_SHIFT: float = 1.79
@@ -71,6 +74,7 @@ class Running(Training):
 
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
+
     TRANING_TYPE = 'SportsWalking'
     KMH_IN_MS: float = 0.278
     SM_IN_M: int = 100
@@ -97,6 +101,7 @@ class SportsWalking(Training):
 
 class Swimming(Training):
     """Тренировка: плавание."""
+
     TRANING_TYPE = 'Swimming'
     LEN_STEP: float = 1.38
     CALORIES_MEAN_SPEED_SHIFT: float = 1.1
